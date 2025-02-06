@@ -1,0 +1,112 @@
+/* Estilos gerais do header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: white;
+    position: relative;
+}
+
+/* Ícone do menu */
+.menu-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Menu lateral */
+.menu {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Escondido inicialmente */
+    width: 100%;
+    max-width: 269px;
+    height: 100vh;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-left: 24px;
+    padding-top: 20px;
+    transition: left 0.3s ease-in-out; /* Transição suave */
+}
+
+/* Quando o menu estiver aberto */
+.menu.active {
+    left: 0;
+}
+
+/* Logo dentro do menu */
+.menu-logo {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+/* Lista de navegação */
+.menu ul {
+    list-style: none;
+    padding: 0;
+    text-align: start;
+}
+
+.menu li {
+    margin: 15px 0;
+}
+
+.menu a {
+    text-decoration: none;
+    font-size: 24px;
+    color: #333;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+@media (min-width: 1080px) {
+    /* Remove o ícone do menu */
+    .menu-icon {
+        display: none;
+    }
+
+    .header {
+        justify-content: space-around;
+    }
+
+
+    /* Estiliza o menu para telas grandes */
+    .menu {
+        position: static; /* Remove o posicionamento fixo */
+        width: auto;
+        height: auto;
+        max-width: none;
+        display: flex;
+        flex-direction: row;
+        align-items: start;
+        margin-left: 0;
+        padding-top: 0;
+        background: transparent;
+    }
+
+    /* Estiliza a lista de navegação */
+    .menu ul {
+        display: flex;
+        flex-direction: row;
+        gap: 20px; /* Espaço entre os itens */
+    }
+
+    .menu li {
+        margin: 0;
+    }
+
+    .menu a {
+        font-size: 24px;
+        color: #333;
+        font-family: 'Bebas Neue', sans-serif;
+        text-decoration: none;
+        padding: 10px 15px;
+        transition: color 0.3s ease-in-out;
+    }
+
+    .menu a:hover {
+        color: #FBAB7E;
+    }
+}
