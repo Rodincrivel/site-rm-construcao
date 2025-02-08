@@ -6,14 +6,24 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2); /* Sombra na parte inferior */
+
 }
 
-/* Estilização do texto acima do carrossel */
 .carrossel-text {
     font-family: 'Poppins', sans-serif;
     font-size: 12px;
     color: #ffffff;
-    margin-bottom: 10px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.carrossel-line {
+    width: 80%;
+    max-width: 325px;
+    height: 1px;
+    background-color: #ffffff;
+    margin-bottom: 24px;
 }
 
 .carrossel-text .semibold {
@@ -25,6 +35,8 @@
     display: flex;
     transition: transform 0.5s ease-in-out;
     width: 100%;
+    justify-content: center;
+    gap: 20px;
 }
 
 .slide {
@@ -46,44 +58,71 @@
 
 /* Botão abaixo das imagens */
 .ver-todas {
-    margin-top: 10px;
+    margin-top: 12px;
     background-color: #ffffff;
     color: #333333;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Bebas Neue', sans-serif;
     font-size: 12px;
     padding: 6px;
     border: none;
     cursor: pointer;
     border-bottom-right-radius: 6px;
     transition: background 0.3s ease;
-    font-weight: 600;
+    margin-bottom: 12px;
 }
 
 .ver-todas:hover {
     background-color: #f0f0f0;
 }
 
-/* Indicadores */
-.indicators {
-    display: flex;
-    margin-top: 24px;
+/* Indicadores fora do carrossel */
+.indicators-wrapper {
+    margin-top: 6px;
+    text-align: center;
 }
 
+/* Cada indicador: 50x50, círculo */
 .dot {
-    width: 10px;
-    height: 10px;
-    background-color: gray;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: #ccc;
+    /* inativo: cinza */
     border-radius: 50%;
+    margin: 0 5px;
     cursor: pointer;
+    line-height: 50px;
+    text-align: center;
+    vertical-align: middle;
 }
 
+/* Indicador ativo */
 .dot.active {
-    background-color: black;
+    background-color: #333;
+    /* cor ativa (mantida conforme sua escolha) */
 }
 
 @media (min-width: 1024px) {
     .carrossel-item {
-        width: 100px;
-        height: 130px;
+        width: 116px;
+        height: 155.24px;
+    }
+
+    .slides {
+        gap: 40px;
+    }
+    .carrossel-text {
+        font-size: 24px;
+        margin-top: 24px;
+    }
+
+    .carrossel-line {
+        max-width: 550px;
+        margin-bottom: 32px;
+    }
+    .ver-todas {
+        font-size: 24px;
+        margin-top: 24px;
+        margin-bottom: 24px;
     }
 }
