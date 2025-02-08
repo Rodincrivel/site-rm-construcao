@@ -1,84 +1,89 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
-/* Configuração do carrossel */
 .carrossel {
-    width: 100%;
-    position: relative;
-    margin-top: 20px; /* Para posicionar abaixo do header */
-}
-
-.carrossel-container {
     width: 100%;
     overflow: hidden;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
-/* Slide */
-.slide {
-    display: none;
-    width: 100%;
-    position: relative;
-}
-
-.slide.active {
-    display: block;
-}
-
-/* Imagem do carrossel */
-.slide img {
-    width: 100%;
-    height: auto;
-}
-
-/* Overlay com gradiente */
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, #FBAB7E 0%, #F7CE68 100%);
-    opacity: 0.7;
-}
-
-/* Texto */
-.subtitulo {
+/* Estilização do texto acima do carrossel */
+.carrossel-text {
     font-family: 'Poppins', sans-serif;
     font-size: 12px;
-    font-weight: 400;
-    color: #FFFFFF;
-    text-align: center;
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding-bottom: 6px;
-    border-bottom: 2px solid #FFFFFF;
+    color: #ffffff;
+    margin-bottom: 10px;
 }
 
-.semibold {
+.carrossel-text .semibold {
     font-weight: 600;
 }
 
-/* Responsivo */
-@media (max-width: 768px) {
-    .slide img {
-        width: 100%;
-        height: auto;
-    }
-
-    .subtitulo {
-        font-size: 10px;
-    }
+/* Slides */
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
 }
 
-@media (max-width: 480px) {
-    .slide img {
-        width: 100%;
-        height: 207px;
-    }
+.slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
 
-    .subtitulo {
-        font-size: 9px;
+/* Estilização das divs de imagens */
+.carrossel-item {
+    width: 68px;
+    height: 91px;
+    background-size: cover;
+    background-position: center;
+    border-bottom-right-radius: 12px;
+}
+
+/* Botão abaixo das imagens */
+.ver-todas {
+    margin-top: 10px;
+    background-color: #ffffff;
+    color: #333333;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    padding: 6px;
+    border: none;
+    cursor: pointer;
+    border-bottom-right-radius: 6px;
+    transition: background 0.3s ease;
+    font-weight: 600;
+}
+
+.ver-todas:hover {
+    background-color: #f0f0f0;
+}
+
+/* Indicadores */
+.indicators {
+    display: flex;
+    margin-top: 24px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: gray;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: black;
+}
+
+@media (min-width: 1024px) {
+    .carrossel-item {
+        width: 100px;
+        height: 130px;
     }
 }

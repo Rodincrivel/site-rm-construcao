@@ -1,41 +1,58 @@
-import React, { useState } from "react";
-import "../style/carrossel.css"; // Importando o CSS
+import React, { useState, useEffect } from "react";
+import "../style/carrossel.css";
+import Fundacao from "../assets/fundacao.jpg";
+import Alvenaria from "../assets/alvenaria.jpg";
+import Porcelanato from "../assets/porcelanaot.png";
+import Modelo from "../assets/modelo.jpg";
 
 const Carrossel = () => {
     const [activeSlide, setActiveSlide] = useState(0);
 
     const slides = [
-        {
-            id: 1,
-            image: "https://via.placeholder.com/1200x600", // Substituir pela imagem real
-            alt: "Imagem 1",
-        },
-        {
-            id: 2,
-            image: "https://via.placeholder.com/1200x600",
-            alt: "Imagem 2",
-        },
-        {
-            id: 3,
-            image: "https://via.placeholder.com/1200x600",
-            alt: "Imagem 3",
-        },
+        [Fundacao, Alvenaria, Porcelanato, Modelo],
     ];
 
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setActiveSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+        }, 30000);
+        return () => clearInterval(interval);
+    }, [slides.length]);
+
     return (
-        <section className="carrossel">
-            <div className="carrossel-container">
+        <section
+            className="carrossel"
+            style={{
+                width: "100%",
+                background: activeSlide === 0
+                    ? "linear-gradient(to bottom, #FBAB7E 0%, #F7CE68 100%)"
+                    : "none"
+            }}
+        >
+            <div className="carrossel-text" style={{ margin: "12px 0" }}>
+                <span className="semibold">Fundação</span> ao <span className="semibold">Acabamento</span>: Tudo em um só lugar.
+            </div>
+            <div className="slides" style={{ transform: `translateX(-${activeSlide * 100}%)`, width: "100%" }}>
                 {slides.map((slide, index) => (
-                    <div 
-                        key={slide.id} 
-                        className={`slide ${index === activeSlide ? "active" : ""}`}
-                    >
-                        <img src={slide.image} alt={slide.alt} />
-                        <div className="overlay"></div>
-                        <h2 className="subtitulo">
-                            <span className="semibold">Fundação</span> ao <span className="semibold">Acabamento</span>: Tudo em um só lugar.
-                        </h2>
+                    <div className="slide" key={index}>
+                        {slide.map((image, i) => (
+                            <div
+                                key={i}
+                                className="carrossel-item"
+                                style={{ backgroundImage: `url(${image})` }}
+                            ></div>
+                        ))}
                     </div>
+                ))}
+            </div>
+            <button className="ver-todas">Ver todas soluções</button>
+            <div className="indicators" style={{ marginTop: "6px", textAlign: "center" }}>
+                {slides.map((_, index) => (
+                    <span
+                        key={index}
+                        className={`dot ${activeSlide === index ? "active" : ""}`}
+                        onClick={() => setActiveSlide(index)}
+                    ></span>
                 ))}
             </div>
         </section>
