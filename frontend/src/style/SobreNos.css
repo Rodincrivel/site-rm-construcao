@@ -1,0 +1,122 @@
+/* Estilos base (mobile-first) */
+.sobre-nos-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 48px;
+    /* 48px abaixo de Valores */
+    padding: 0 16px;
+    /* Padding lateral para mobile */
+}
+
+.sobre-nos-titulos {
+    text-align: center;
+    margin-bottom: 6px;
+    /* 6px abaixo do título */
+}
+
+.sobre-nos-subtitulo {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    /* Semibold */
+    font-size: 12px;
+    color: #FBAB7E;
+    margin-bottom: 6px;
+    /* 6px abaixo do subtítulo */
+}
+
+.sobre-nos-titulo {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    /* Regular */
+    font-size: 16px;
+    color: #333333;
+}
+
+.carrossel-sobre-nos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    /* Espaço entre os botões e a imagem */
+    margin-bottom: 12px;
+    /* 12px abaixo do carrossel */
+}
+
+.carrossel-imagem {
+    width: 240px;
+    height: 144px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0 12px 12px 0;
+    /* Border-radius apenas à direita */
+}
+
+.carrossel-btn {
+    width: 50px;
+    height: 50px;
+    background-color: #333333;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.sobre-nos-paragrafos {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    width: 332px;
+    margin-left: 24px;
+}
+
+.sobre-nos-paragrafos p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    /* Regular */
+    font-size: 12px;
+    color: #333333;
+}
+
+/* Estilos para desktop */
+@media (min-width: 1024px) {
+    .sobre-nos-container {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .sobre-nos-titulos {
+        margin-bottom: 12px;
+    }
+
+    .sobre-nos-subtitulo {
+        font-size: 24px;
+    }
+
+    .sobre-nos-titulo {
+        font-size: 32px;
+    }
+
+    .carrossel-imagem {
+        width: 397px;
+        height: 286px;
+    }
+
+    .sobre-nos-paragrafos {
+        width: 524px;
+    }
+
+    .sobre-nos-paragrafos p {
+        font-size: 16px;
+        margin: 6px;
+    }
+
+    .container-01 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 64px;
+    }
+}

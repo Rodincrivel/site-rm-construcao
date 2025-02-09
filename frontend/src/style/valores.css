@@ -4,7 +4,7 @@
     flex-direction: column;
     align-items: center;
     gap: 24px; /* Espaço entre os itens */
-    margin-top: 16px; /* 48px abaixo do carrossel */
+    margin-top: 48px; /* 48px abaixo do carrossel */
     padding: 0 16px; /* Padding lateral para mobile */
 }
 
@@ -31,6 +31,7 @@
     color: #333333;
     text-align: center;
     max-width: 300px; /* Limita a largura do parágrafo */
+    margin: 0px;
 }
 
 /* Estilos para desktop */

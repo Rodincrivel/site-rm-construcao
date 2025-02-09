@@ -12,7 +12,6 @@ const Valores = () => {
                     Trabalhamos com materiais confiáveis e atenção minuciosa em cada etapa, garantindo resultados duradouros e seguros.
                 </p>
             </div>
-
             {/* Segundo valor */}
             <div className="valor-item">
                 <box-icon name="comment-dots" type="solid" color="#333333" size="48px"></box-icon>
