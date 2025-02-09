@@ -1,0 +1,48 @@
+/* Estilos base (mobile-first) */
+.valores-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px; /* Espaço entre os itens */
+    margin-top: 16px; /* 48px abaixo do carrossel */
+    padding: 0 16px; /* Padding lateral para mobile */
+}
+
+.valor-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.valor-titulo {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700; /* Bold */
+    font-size: 16px;
+    color: #333333;
+    margin-top: 12px; /* 12px abaixo do ícone */
+    margin-bottom: 10px; /* 10px acima do parágrafo */
+}
+
+.valor-paragrafo {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400; /* Regular */
+    font-size: 16px;
+    color: #333333;
+    text-align: center;
+    max-width: 300px; /* Limita a largura do parágrafo */
+}
+
+/* Estilos para desktop */
+@media (min-width: 1024px) {
+    .valores-container {
+        flex-direction: row;
+        justify-content: center;
+        gap: 48px; /* Espaço maior entre os itens no desktop */
+        padding: 0 32px; /* Padding lateral para desktop */
+    }
+
+    .valor-item {
+        max-width: 300px; /* Limita a largura de cada item */
+    }
+}

@@ -4,6 +4,8 @@ import Fundacao from "../assets/fundacao.jpg";
 import Alvenaria from "../assets/alvenaria.jpg";
 import Porcelanato from "../assets/porcelanaot.png";
 import Modelo from "../assets/modelo.jpg";
+import cellDesktop from '../assets/cell-desktop.svg';
+import zapMobile from '../assets/zap-mobile.svg';
 
 const Carrossel = () => {
     const [activeSlide, setActiveSlide] = useState(0);
@@ -27,7 +29,25 @@ const Carrossel = () => {
             )
         },
         {
-            background: "#000",
+            background: "linear-gradient(to left, #81FBB8 0%, #28C76F 100%)",
+            content: (
+                <>
+                    <div className="container-two-carrossel">
+                        <div className="two-carrossel">
+                            <div className="carrossel-text">
+                                <span className="semibold">Orçamento Rápido: Fale no WhatsApp</span>
+                                <div className="carrossel-line"></div>
+                                <div width="173px">
+                                    <span className="semibold cta-text">Clique no botão a baixo e comece agora mesmo a transformar seu projeto em realidade</span> 
+                                 </div>
+                                <button className="ver-todas">enviar mensagem</button>
+                            </div>
+                        </div>
+                        <img src={zapMobile} alt="Mobile" className="zap-mobile" />
+                        <img src={cellDesktop} alt="Desktop" className="cell-desktop" />
+                    </div>
+                </>
+            )
         }
     ];
 
