@@ -9,17 +9,17 @@ const Header = () => {
     const menuRef = useRef(null);
     const menuIconRef = useRef(null);
 
-    // Função genérica para scroll suave
+
     const handleSmoothScroll = (id) => (e) => {
         e.preventDefault();
         const section = document.getElementById(id);
         if (section) {
             section.scrollIntoView({
                 behavior: "smooth",
-                block: "start" // Alinha o topo da seção com a viewport
+                block: "start" 
             });
         }
-        setMenuOpen(false); // Fecha o menu mobile
+        setMenuOpen(false); 
     };
 
     useEffect(() => {

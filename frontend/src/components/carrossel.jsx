@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../style/carrossel.css";
 import Fundacao from "../assets/fundacao.jpg";
 import Alvenaria from "../assets/alvenaria.jpg";
@@ -10,7 +10,6 @@ import zapMobile from '../assets/zap-mobile.svg';
 const Carrossel = () => {
     const [activeSlide, setActiveSlide] = useState(0);
 
-    // Função para rolar até a âncora #servicos
     const scrollToServicos = () => {
         const servicosSection = document.getElementById("servicos");
         if (servicosSection) {
@@ -18,9 +17,8 @@ const Carrossel = () => {
         }
     };
 
-    // Função para abrir o WhatsApp
     const handleWhatsAppClick = () => {
-        const phoneNumber = '5511910872993'; // Número formatado sem espaços ou caracteres especiais
+        const phoneNumber = '5511910872993'; 
         const message = encodeURIComponent('Olá, gostaria de solicitar um orçamento.');
         const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
         window.open(whatsappUrl, '_blank');
@@ -40,7 +38,6 @@ const Carrossel = () => {
                             <div key={i} className="carrossel-item" style={{ backgroundImage: `url(${image})` }}></div>
                         ))}
                     </div>
-                    {/* Botão "TODOS OS SERVIÇOS" */}
                     <button className="ver-todas" onClick={scrollToServicos}>
                         TODOS OS SERVIÇOS
                     </button>
@@ -72,6 +69,14 @@ const Carrossel = () => {
             )
         }
     ];
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setActiveSlide((prevSlide) => (prevSlide + 1) % slides.length);
+        }, 10000); 
+
+        return () => clearInterval(interval);
+    }, [slides.length]);
 
     return (
         <>
