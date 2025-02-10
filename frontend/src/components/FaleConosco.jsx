@@ -20,12 +20,32 @@ const FaleConosco = () => {
                     </div>
                 </div>
             </div>
-            <form className="fale-conosco-form" action="https://formspree.io/f/mqkrnqzv" method="POST">
+
+            {/* FORMULÁRIO COM O LINK CORRETO DO FORMSPREE */}
+            <form
+                className="fale-conosco-form"
+                action="https://formspree.io/f/xzzdvqlk" // Link correto do Formspree
+                method="POST"
+            >
                 <label htmlFor="nome" className="form-label">Nome</label>
-                <input type="text" id="nome" name="nome" placeholder="Insira seu nome completo" className="form-input" required />
+                <input
+                    type="text"
+                    id="nome"
+                    name="nome"
+                    placeholder="Insira seu nome completo"
+                    className="form-input"
+                    required
+                />
 
                 <label htmlFor="email" className="form-label">E-mail</label>
-                <input type="email" id="email" name="email" placeholder="exemplo@exemplo.com.br" className="form-input" required />
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="exemplo@exemplo.com.br"
+                    className="form-input"
+                    required
+                />
 
                 <label htmlFor="mensagem" className="form-label">Descreva sua mensagem</label>
                 <textarea
