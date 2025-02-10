@@ -1,0 +1,142 @@
+/* Estilos para mobile */
+.fale-conosco {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 48px 0;
+  }
+  
+  .fale-conosco-content {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  
+  .fale-conosco-subtitulo {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    color: #FBAB7E;
+    margin-bottom: 6px;
+  }
+  
+  .fale-conosco-titulo {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #333333;
+    max-width: 320px;
+    margin: 0 auto 24px;
+  }
+  
+  .container-info-whatsapp {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .whatsapp-info {
+    margin-bottom: 24px;
+  }
+  
+  .whatsapp-titulo {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #27641F;
+    margin-bottom: 6px;
+  }
+  
+  .whatsapp-numero {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #333333;
+    display: block;
+    margin-bottom: 3px;
+    cursor: pointer;
+  }
+  
+  .whatsapp-icon {
+    width: 100%;
+    height: 50px;
+    margin-left: 24px;
+  }
+  
+  .fale-conosco-form {
+    background-color: #FBAB7E;
+    width: 339px;
+    height: 374px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    border-radius: 0 0px 12px 0; 
+  }
+  
+  .form-label {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+  
+  .form-input, .form-textarea {
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+    margin-bottom: 24px;
+    background-color: #ffffff;
+    color: #333333;
+  }
+  
+  .form-input::placeholder, .form-textarea::placeholder {
+    color: #D9D9D9;
+  }
+  
+  .form-textarea {
+    height: 120px;
+    resize: none;
+  }
+  
+  .form-button {
+    background-color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #FBAB7E;
+    padding: 3px 6px;
+    border: none;
+    border-radius: 0 0px 12px 0; 
+    cursor: pointer;
+    align-self: center;
+  }
+  
+  /* Estilos para desktop */
+  @media (min-width: 768px) {
+    .fale-conosco-subtitulo {
+      font-size: 24px;
+    }
+  
+    .fale-conosco-titulo {
+      font-size: 32px;
+      max-width: 960px;
+    }
+  
+    .fale-conosco-form {
+      width: 805px;
+      height: 374px;
+    }
+
+    .whatsapp-titulo {
+        font-size: 32px;
+    }
+
+    .whatsapp-numero {
+        font-size: 24px;
+    }
+
+    .whatsapp-icon {
+        height: 75px;
+    }
+  }

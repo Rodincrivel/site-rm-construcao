@@ -36,6 +36,7 @@
 /* Quando o menu estiver aberto */
 .menu.active {
     left: 0;
+    z-index: 1000;
 }
 
 /* Logo dentro do menu */

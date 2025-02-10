@@ -1,39 +1,89 @@
-import React, { useState, useEffect } from "react";
-import "../style/header.css"; // Importando o CSS
-import LogoMobile from "../assets/logo-rmundial.svg"; // Logo versão Mobile
-import LogoDesktop from "../assets/logo-rmundial-desktop.svg"; // Logo versão Desktop
+import React, { useState, useEffect, useRef } from "react";
+import "../style/header.css";
+import LogoMobile from "../assets/logo-rmundial.svg";
+import LogoDesktop from "../assets/logo-rmundial-desktop.svg";
 
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [isDesktop, setIsDesktop] = useState(window.innerWidth > 1080);
+    const menuRef = useRef(null);
+    const menuIconRef = useRef(null);
+
+    // Função genérica para scroll suave
+    const handleSmoothScroll = (id) => (e) => {
+        e.preventDefault();
+        const section = document.getElementById(id);
+        if (section) {
+            section.scrollIntoView({
+                behavior: "smooth",
+                block: "start" // Alinha o topo da seção com a viewport
+            });
+        }
+        setMenuOpen(false); // Fecha o menu mobile
+    };
 
     useEffect(() => {
-        const handleResize = () => {
-            setIsDesktop(window.innerWidth > 1080);
-        };
+        const handleResize = () => setIsDesktop(window.innerWidth > 1080);
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (menuOpen && menuRef.current &&
+                !menuRef.current.contains(event.target) &&
+                !menuIconRef.current.contains(event.target)) {
+                setMenuOpen(false);
+            }
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, [menuOpen]);
+
     return (
         <header className="header">
-            {/* Alterna automaticamente entre logo mobile e desktop */}
             <div className="logo">
                 <img src={isDesktop ? LogoDesktop : LogoMobile} alt="Logo MR Mundial Construções" />
             </div>
 
-            {/* Ícone do menu hambúrguer - Só aparece no mobile */}
-            <button className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
+            <button className="menu-icon" ref={menuIconRef} onClick={() => setMenuOpen(!menuOpen)}>
                 <i className={`bx ${menuOpen ? "bx-x" : "bx-menu"}`} style={{ fontSize: "48px", color: "#FBAB7E" }}></i>
             </button>
 
-            {/* Menu de navegação */}
-            <nav className={`menu ${menuOpen ? "active" : ""}`}>
+            <nav className={`menu ${menuOpen ? "active" : ""}`} ref={menuRef}>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#sobre">Sobre Nós</a></li>
-                    <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#contato">Fale Conosco</a></li>
+                    <li>
+                        <a
+                            href="#home"
+                            onClick={handleSmoothScroll('home')}
+                        >
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="#sobre-nos"
+                            onClick={handleSmoothScroll('sobre-nos')}
+                        >
+                            Sobre Nós
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="#servicos"
+                            onClick={handleSmoothScroll('servicos')}
+                        >
+                            Serviços
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="#fale-conosco"
+                            onClick={handleSmoothScroll('fale-conosco')}
+                        >
+                            Fale Conosco
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </header>

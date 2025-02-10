@@ -23,7 +23,7 @@ const SobreNos = () => {
     return (
         <section className="sobre-nos-container">
             {/* Subtítulo e Título */}
-            <div className="sobre-nos-titulos">
+            <div className="sobre-nos-titulos" id="sobre-nos">
                 <h3 className="sobre-nos-subtitulo">SOBRE NÓS</h3>
                 <h1 className="sobre-nos-titulo">Há 30 anos ajudando a realizar sonhos</h1>
             </div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../style/carrossel.css";
 import Fundacao from "../assets/fundacao.jpg";
 import Alvenaria from "../assets/alvenaria.jpg";
@@ -9,6 +9,22 @@ import zapMobile from '../assets/zap-mobile.svg';
 
 const Carrossel = () => {
     const [activeSlide, setActiveSlide] = useState(0);
+
+    // Função para rolar até a âncora #servicos
+    const scrollToServicos = () => {
+        const servicosSection = document.getElementById("servicos");
+        if (servicosSection) {
+            servicosSection.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
+    // Função para abrir o WhatsApp
+    const handleWhatsAppClick = () => {
+        const phoneNumber = '5511910872993'; // Número formatado sem espaços ou caracteres especiais
+        const message = encodeURIComponent('Olá, gostaria de solicitar um orçamento.');
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+        window.open(whatsappUrl, '_blank');
+    };
 
     const slides = [
         {
@@ -24,7 +40,10 @@ const Carrossel = () => {
                             <div key={i} className="carrossel-item" style={{ backgroundImage: `url(${image})` }}></div>
                         ))}
                     </div>
-                    <button className="ver-todas">TODOS OS SERVIÇOS</button>
+                    {/* Botão "TODOS OS SERVIÇOS" */}
+                    <button className="ver-todas" onClick={scrollToServicos}>
+                        TODOS OS SERVIÇOS
+                    </button>
                 </>
             )
         },
@@ -38,9 +57,12 @@ const Carrossel = () => {
                                 <span className="semibold">Orçamento Rápido: Fale no WhatsApp</span>
                                 <div className="carrossel-line"></div>
                                 <div width="173px">
-                                    <span className="semibold cta-text">Clique no botão a baixo e comece agora mesmo a transformar seu projeto em realidade</span> 
-                                 </div>
-                                <button className="ver-todas">enviar mensagem</button>
+                                    <span className="semibold cta-text">Clique no botão a baixo e comece agora mesmo a transformar seu projeto em realidade</span>
+                                </div>
+                                {/* Botão "enviar mensagem" */}
+                                <button className="ver-todas" onClick={handleWhatsAppClick}>
+                                    enviar mensagem
+                                </button>
                             </div>
                         </div>
                         <img src={zapMobile} alt="Mobile" className="zap-mobile" />
@@ -53,7 +75,7 @@ const Carrossel = () => {
 
     return (
         <>
-            <section className="carrossel" style={{ width: "100%", background: slides[activeSlide].background }}>
+            <section className="carrossel" style={{ width: "100%", background: slides[activeSlide].background }} id="home">
                 {slides[activeSlide].content}
             </section>
             <div className="indicators-wrapper">

@@ -3,7 +3,9 @@ import Header from "../components/header";
 import Carrossel from "../components/carrossel";
 import Valores from "../components/valores";
 import SobreNos from "../components/SobreNos";
-import Service from "../components/service"; // Importe o componente Service
+import Service from "../components/service";
+import FaleConosco from '../components/FaleConosco';
+import Footer from '../components/footer';
 
 const Home = () => {
     return (
@@ -12,7 +14,9 @@ const Home = () => {
             <Carrossel />
             <Valores />
             <SobreNos />
-            <Service /> 
+            <Service />
+            <FaleConosco />
+            <Footer />
         </div>
     );
 };
