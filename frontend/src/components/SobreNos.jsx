@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "../style/SobreNos.css";
 import Imagem1 from "../assets/imagem-1.jpg";
 import Imagem2 from "../assets/imagem-2.jpg";
@@ -9,26 +9,31 @@ import Imagem6 from "../assets/imagem-6.jpg";
 
 const SobreNos = () => {
     const [currentImage, setCurrentImage] = useState(0);
-
     const images = [Imagem6, Imagem1, Imagem2, Imagem3, Imagem4, Imagem5];
 
-    const nextImage = () => {
+    const nextImage = useCallback(() => {
         setCurrentImage((prev) => (prev + 1) % images.length);
-    };
+    }, [images.length]);
 
-    const prevImage = () => {
+    const prevImage = useCallback(() => {
         setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
-    };
+    }, [images.length]);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            nextImage();
+        }, 5000);
+
+        return () => clearInterval(interval);
+    }, [nextImage]);
 
     return (
         <section className="sobre-nos-container">
-            {/* Subtítulo e Título */}
             <div className="sobre-nos-titulos" id="sobre-nos">
                 <h3 className="sobre-nos-subtitulo">SOBRE NÓS</h3>
                 <h1 className="sobre-nos-titulo">Há 30 anos ajudando a realizar sonhos</h1>
             </div>
             <div className="container-01">
-                {/* Carrossel de Imagens */}
                 <div className="carrossel-sobre-nos">
                     <button className="carrossel-btn" onClick={prevImage}>
                         <box-icon name="chevron-left" type="solid" color="#ffffff"></box-icon>
@@ -42,7 +47,6 @@ const SobreNos = () => {
                     </button>
                 </div>
 
-                {/* Parágrafos */}
                 <div className="sobre-nos-paragrafos">
                     <p>
                         Há mais de 30 anos, a MR Mundial Construções vem transformando projetos em realidade, oferecendo soluções completas para cada etapa da obra. Com expertise e compromisso, atuamos desde a fundação até o acabamento, garantindo qualidade, segurança e eficiência em cada detalhe.
@@ -57,10 +61,7 @@ const SobreNos = () => {
                         MR Mundial Construções — do alicerce ao acabamento, construindo com qualidade e compromisso.
                     </p>
                 </div>
-
-
             </div>
-
         </section>
     );
 };
