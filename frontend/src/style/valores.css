@@ -1,11 +1,10 @@
-/* Estilos base (mobile-first) */
 .valores-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 24px; /* Espaço entre os itens */
-    margin-top: 48px; /* 48px abaixo do carrossel */
-    padding: 0 16px; /* Padding lateral para mobile */
+    gap: 24px; 
+    margin-top: 48px;
+    padding: 0 16px; 
 }
 
 .valor-item {
@@ -17,33 +16,32 @@
 
 .valor-titulo {
     font-family: 'Inter', sans-serif;
-    font-weight: 700; /* Bold */
-    font-size: 16px;
+    font-weight: 700;
+    font-size: 18px;
     color: #333333;
-    margin-top: 12px; /* 12px abaixo do ícone */
-    margin-bottom: 10px; /* 10px acima do parágrafo */
+    margin-top: 12px;
+    margin-bottom: 10px;
 }
 
 .valor-paragrafo {
     font-family: 'Inter', sans-serif;
-    font-weight: 400; /* Regular */
+    font-weight: 400; 
     font-size: 16px;
     color: #333333;
     text-align: center;
-    max-width: 300px; /* Limita a largura do parágrafo */
+    max-width: 300px; 
     margin: 0px;
 }
 
-/* Estilos para desktop */
 @media (min-width: 1024px) {
     .valores-container {
         flex-direction: row;
         justify-content: center;
-        gap: 48px; /* Espaço maior entre os itens no desktop */
-        padding: 0 32px; /* Padding lateral para desktop */
+        gap: 48px; 
+        padding: 0 32px; 
     }
 
     .valor-item {
-        max-width: 300px; /* Limita a largura de cada item */
+        max-width: 300px; 
     }
 }

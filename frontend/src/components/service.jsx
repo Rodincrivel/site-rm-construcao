@@ -13,7 +13,7 @@ import Interno from "../assets/interno.jpg";
 const Service = () => {
     const services = [
         {
-            title: "Fundação e Estrutura",
+            title: "FUNDAÇÃO E ESTRUTURA",
             image: Fundacao,
             paragraphs: [
                 "Fundação (Sapatas, baldrames, estacas)",
@@ -22,7 +22,7 @@ const Service = () => {
             ]
         },
         {
-            title: "Alvenaria e Paredes",
+            title: "ALVENARIA E PAREDES",
             image: Alvenaria,
             paragraphs: [
                 "Levantamento de paredes (Tijolos, Blocos)",
@@ -31,7 +31,7 @@ const Service = () => {
             ]
         },
         {
-            title: "Instalações Hidráulicas e Esgoto",
+            title: "INSTALAÇÕES HIDRÁULICAS E ESGOTO",
             image: Hidraulica,
             paragraphs: [
                 "Rede de água limpa",
@@ -40,7 +40,7 @@ const Service = () => {
             ]
         },
         {
-            title: "Instalação Elétrica",
+            title: "INSTALAÇÃO ELÉTRICA",
             image: Eletrica,
             paragraphs: [
                 "Passagem de fiação",
@@ -49,7 +49,7 @@ const Service = () => {
             ]
         },
         {
-            title: "Revestimentos (Piso e Parede)",
+            title: "REVESTIMENTOS (PISO E PAREDE)",
             image: Porcelanato,
             paragraphs: [
                 "Colocação de pisos e revestimentos porcelanato",
@@ -58,8 +58,8 @@ const Service = () => {
             ]
         },
         {
-            title: "Acabamentos Internos",
-            image: Externo,
+            title: "ACABAMENTOS INTERNOS",
+            image: Interno,
             paragraphs: [
                 "Pintura interna (Paredes, Tetos)",
                 "Aplicação de gesso ou Molduras",
@@ -67,8 +67,8 @@ const Service = () => {
             ]
         },
         {
-            title: "Acabamentos Externos",
-            image: Demolicao,
+            title: "ACABAMENTOS EXTERNOS",
+            image: Externo,
             paragraphs: [
                 "Pintura externa",
                 "Colocação de pastilhas, pedras decorativas ou texturas",
@@ -76,8 +76,8 @@ const Service = () => {
             ]
         },
         {
-            title: "Serviços de Manutenção e Reforma",
-            image: Gesso,
+            title: "SERVIÇOS DE MANUTENÇÃO E REFORMA",
+            image: Demolicao,
             paragraphs: [
                 "Pequenos reparos (Troca de pisos, Reparo de vazamentos)",
                 "Ampliação de espaços",
@@ -85,12 +85,12 @@ const Service = () => {
             ]
         },
         {
-            title: "Acabamentos Internos",
-            image: Interno,
+            title: "SERVIÇOS ADICIONAIS",
+            image: Gesso,
             paragraphs: [
-                "Pintura interna (paredes, tetos)",
-                "Aplicação de gesso ou molduras",
-                "Instalação de rodapés, portas e janelas acabadas"
+                "Instalação de bancadas, pias, louças sanitárias",
+                "Montagem de estruturas metálicas",
+                "Colocação de forro (PVC, gesso, etc.)"
             ]
         }
     ];

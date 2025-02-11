@@ -1,29 +1,28 @@
-/* Estilos base (mobile-first) */
 .service-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 48px; /* 48px abaixo de SobreNos */
-    padding: 0 16px; /* Padding lateral para mobile */
-}
+    margin-top: 48px;
+    padding: 0 16px;
+ }
 
 .service-titulos {
     text-align: center;
-    margin-bottom: 24px; /* Espaço abaixo do título */
+    margin-bottom: 24px; 
 }
 
 .service-subtitulo {
     font-family: 'Poppins', sans-serif;
-    font-weight: 600; /* Semibold */
-    font-size: 12px;
-    color: #FBAB7E;
-    margin-bottom: 6px; /* 6px abaixo do subtítulo */
+    font-weight: 600; 
+    font-size: 16px;
+    color: #F57C00 ;
+    margin-bottom: 6px; 
 }
 
 .service-titulo {
     font-family: 'Poppins', sans-serif;
-    font-weight: 400; /* Regular */
-    font-size: 16px;
+    font-weight: 400; 
+    font-size: 18px;
     color: #333333;
     margin: 0px;
 }
@@ -31,14 +30,14 @@
 .service-cards {
     display: flex;
     flex-direction: column;
-    gap: 12px; /* Espaço entre os cards */
+    gap: 12px; 
 }
 
 .service-card {
     width: 244px;
     height: 200px;
-    background-color: #F7CE68;
-    border-radius: 0 0px 12px 0; /* Border-radius apenas à direita */
+    background-color: #212121 ;
+    border-radius: 0 0px 12px 0; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -134,7 +133,7 @@
     font-weight: 700;
     font-size: 12px;
     color: #ffffff;
-    background-color: #F7CE68;
+    background-color: #F57C00 ;
     padding: 6px 24px;
     border: none;
     border-radius: 0;

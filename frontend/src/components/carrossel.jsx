@@ -58,7 +58,7 @@ const Carrossel = () => {
                                 </div>
                                 {/* Botão "enviar mensagem" */}
                                 <button className="ver-todas" onClick={handleWhatsAppClick}>
-                                    enviar mensagem
+                                    ENVIAR MENSAGEM
                                 </button>
                             </div>
                         </div>

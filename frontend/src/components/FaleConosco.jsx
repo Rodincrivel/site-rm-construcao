@@ -14,6 +14,7 @@ const FaleConosco = () => {
                     <div className="whatsapp-info">
                         <h3 className="whatsapp-titulo">WHATSAPP</h3>
                         <span className="whatsapp-numero">55 11 91087-2993</span>
+                        <span className="whatsapp-numero">55 33 99835-6776</span>
                     </div>
                     <div className='icon-div'>
                         <img src={zapIcon} alt="WhatsApp Icon" className="whatsapp-icon" />

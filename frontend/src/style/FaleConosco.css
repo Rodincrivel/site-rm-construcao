@@ -14,15 +14,15 @@
   .fale-conosco-subtitulo {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    font-size: 12px;
-    color: #FBAB7E;
+    font-size: 16px;
+    color: #F57C00;
     margin-bottom: 6px;
   }
   
   .fale-conosco-titulo {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 18px;
     color: #333333;
     max-width: 320px;
     margin: 0 auto 24px;
@@ -53,7 +53,6 @@
     color: #333333;
     display: block;
     margin-bottom: 3px;
-    cursor: pointer;
   }
   
   .whatsapp-icon {
@@ -63,7 +62,7 @@
   }
   
   .fale-conosco-form {
-    background-color: #FBAB7E;
+    background-color: #F57C00;
     width: 339px;
     height: 374px;
     padding: 12px;
@@ -101,10 +100,10 @@
   
   .form-button {
     background-color: #ffffff;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 16px;
-    color: #FBAB7E;
+    color: #F57C00;
     padding: 3px 6px;
     border: none;
     border-radius: 0 0px 12px 0; 
