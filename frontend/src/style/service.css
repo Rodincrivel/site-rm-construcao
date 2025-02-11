@@ -4,6 +4,7 @@
     align-items: center;
     margin-top: 48px;
     padding: 0 16px;
+    background-color: #333333;
  }
 
 .service-titulos {
@@ -23,7 +24,7 @@
     font-family: 'Poppins', sans-serif;
     font-weight: 400; 
     font-size: 18px;
-    color: #333333;
+    color: #ffffff;
     margin: 0px;
 }
 
@@ -43,6 +44,7 @@
     align-items: center;
     overflow: hidden;
     box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+    margin-bottom: 24px;
 }
 
 .service-card-titulo {
